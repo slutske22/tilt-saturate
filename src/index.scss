@@ -1,0 +1,51 @@
+@import './variables.scss';
+
+/* border box fix */
+html {
+   box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+   box-sizing: inherit;
+}
+
+html,
+body,
+#root,
+.App {
+   height: 100%;
+   width: 100%;
+   margin: 0px;
+   padding: 0px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+body {
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   background-color: $background;
+   color: $foreground;
+}
+
+button {
+   color: $foreground;
+   border: 1px solid $foreground;
+   border-radius: 5px;
+   padding: 0.25em;
+   font-size: 1.5em;
+   background-color: transparent;
+
+   &:active {
+      border-color: none;
+      color: $background;
+      background-color: $foreground;
+   }
+}
