@@ -18,7 +18,7 @@ const CamScreen = ({ setCamOpen }) => {
 		if (typeof DeviceMotionEvent.requestPermission === 'function') {
 			DeviceOrientationEvent.requestPermission()
 				.then((response) => {
-					if (response == 'granted') {
+					if (response === 'granted') {
 						window.addEventListener(
 							'deviceorientation',
 							deviceOrientationHandler

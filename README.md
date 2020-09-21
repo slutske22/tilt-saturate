@@ -1,4 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+   <img src="/assets/tilt-left.png" width="80px">&nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="/assets/tilt.png" width="80px">&nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="/assets/tilt-right.png" width="80px">
+   <h1 align="center">tilt-saturate</h1>
+</p>
+
+<p align="center">
+</p>
+
+<p align="center">
+   <h2 align="center"><a href="https://codesandbox.io/s/react-esri-leaflet-example-n15yn">&#128064; Demo &#128064;</a></h2>
+</p>
+
+## About
+
+tile-saturate is a simple web-app that opens a webcam in the browser and applies a filter based on the orientation of the mobile device being used.  Tile the device clockwise, and the video feed will become more [saturated](https://photographylife.com/what-is-saturation-and-how-to-get-optimal-saturation).  Tile it counter-clockwise, and it will become more greyscale.
+
+## Environments
+
+This app has been tested in the following environments:
+
+- Mac OS Catalina 10.15.6, Chrome Version 84.0.4147.125
+- XCode iPhone 11 simulator, iOS 13.7, Safari Browser
+- iPhone 11 Pro, iOS 13.7, Safari Browser
+
+
+
 
 ## Available Scripts
 
@@ -27,42 +54,9 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
