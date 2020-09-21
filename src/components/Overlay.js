@@ -3,15 +3,18 @@ import { FaCameraRetro } from 'react-icons/fa';
 import { GiAnticlockwiseRotation, GiClockwiseRotation } from 'react-icons/gi';
 import { FiArrowLeftCircle, FiInfo } from 'react-icons/fi';
 import { MdPhoneIphone } from 'react-icons/md';
+import Simulator from './Simulator'
 
 import './Overlay.scss';
 
-const Overlay = ({ setCamOpen, orientation, attachListener }) => {
-	const [open, setOpen] = useState(true);
+const Overlay = ({ setCamOpen, orientation, attachListener, simulatorValue, setSimulatorValue }) => {
+	const [open, setOpen] = useState('instructions');
+
+
 
 	return (
 		<div className="Overlay">
-			{open && (
+			{open === 'instructions' && (
 				<div className="instructions">
 					<h1>Tilt Saturate</h1>
 					<h2>A silly app for people</h2>
@@ -34,6 +37,12 @@ const Overlay = ({ setCamOpen, orientation, attachListener }) => {
 					</div>
 				</div>
 			)}
+			{open === 'simulator' &&
+				<Simulator 
+					setOpen={setOpen}
+					simulatorValue={simulatorValue}
+					setSimulatorValue={setSimulatorValue} />
+			}
 			{!open && (
 				<div className="menu">
 					<div className="top">
@@ -43,13 +52,13 @@ const Overlay = ({ setCamOpen, orientation, attachListener }) => {
 						>
 							<FiArrowLeftCircle size={40} />
 						</div>
-						<div onClick={() => setOpen(true)} className="icon-wrapper">
+						<div onClick={() => setOpen('instructions')} className="icon-wrapper">
 							<FiInfo size={40} />
 						</div>
 					</div>
 					<div className="bottom">
 						<pre>{JSON.stringify(orientation, null, 2)}</pre>
-						<div className="icon-wrapper">
+						<div onClick={() => setOpen('simulator')} className="icon-wrapper phone-simulator">
 							<MdPhoneIphone size={40} />
 						</div>
 					</div>

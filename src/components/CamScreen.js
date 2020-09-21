@@ -6,6 +6,7 @@ import './CamScreen.scss';
 
 const CamScreen = ({ setCamOpen }) => {
 	const [orientation, setOrientation] = useState('orientation');
+	const [simulatorValue, setSimulatorValue] = useState(0)
 
 	const deviceOrientationHandler = (e) => {
 		const { alpha, beta, gamma } = e;
@@ -51,6 +52,8 @@ const CamScreen = ({ setCamOpen }) => {
 				setCamOpen={setCamOpen}
 				orientation={orientation}
 				attachListener={attachListener}
+				simulatorValue={simulatorValue}
+				setSimulatorValue={setSimulatorValue}
 			/>
 		</div>
 	);
