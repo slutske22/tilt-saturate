@@ -48,4 +48,17 @@ button {
       color: $background;
       background-color: $foreground;
    }
+
+   &.alternate {
+      color: $background;
+      border: 1px solid $background;
+      background-color: transparent;
+
+      &:active {
+         border-color: $foreground;
+         color: $foreground;
+         background-color: $background;
+      }
+   }
+
 }
