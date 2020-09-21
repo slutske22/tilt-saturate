@@ -8,7 +8,7 @@ const CamScreen = ({ setCamOpen }) => {
 	useEffect(() => {
 		const deviceOrientationHandler = (e) => {
 			const { alpha, beta, gamma } = e;
-			console.log(e);
+			console.log({ alpha, beta, gamma });
 		};
 
 		if (window.DeviceOrientationEvent) {
