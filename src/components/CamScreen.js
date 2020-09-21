@@ -10,12 +10,10 @@ const CamScreen = ({ setCamOpen }) => {
 
 	const deviceOrientationHandler = (e) => {
 		const { alpha, beta, gamma } = e;
-		console.log({ alpha, beta, gamma });
 		setOrientation({ alpha, beta, gamma });
 	};
 
 	const attachListener = () => {
-		// https://medium.com/flawless-app-stories/how-to-request-device-motion-and-orientation-permission-in-ios-13-74fc9d6cd140
 		if (typeof DeviceMotionEvent.requestPermission === 'function') {
 			DeviceOrientationEvent.requestPermission()
 				.then((response) => {

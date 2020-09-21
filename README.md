@@ -14,7 +14,7 @@
 
 ## About
 
-tile-saturate is a simple web-app that opens a webcam in the browser and applies a filter based on the orientation of the mobile device being used.  Tile the device clockwise, and the video feed will become more [saturated](https://photographylife.com/what-is-saturation-and-how-to-get-optimal-saturation).  Tile it counter-clockwise, and it will become more greyscale.
+tile-saturate is a simple web-app that opens a webcam in the browser and applies a filter based on the orientation of the mobile device being used.  Tilt the device clockwise, and the video feed will become more [saturated](https://photographylife.com/what-is-saturation-and-how-to-get-optimal-saturation).  Tilt it counter-clockwise, and it will become less saturated.
 
 ## Environments
 
@@ -25,26 +25,38 @@ This app has been tested in the following environments:
 - iPhone 11 Pro, iOS 13.7, Safari Browser
 
 
+## Central Concept
 
+tilt-saturate uses [react-webcam](https://github.com/mozmorris/react-webcam), a simple solution to creating a `<video>` component which displays the webcam feed of the user's device. When the webcam component mounts, it checks to see if the `window` has a `DeviceOrientationEvent` property.  If so, it attaches an event listener to the `deviceorientation` event and stores the `gamma` position variable from the event.  Based on the value of `gamma`, which is the tilt orientation of the device in the same plane as the screen, a [css filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) is updated on the `<Webcam />` component via the `style` prop.
+
+## Challenges
+
+**HTTPS Required:**<br>
+tilt-saturate is built on create-react-app (CRA).  CRA's development environment uses webpack-dev-server, and is configured for use with the `http` protocol.  While developing the app, the webcam refused to cooperate with this environment.  This is because a webpage reading video feed from a user's webcam must communicate via the more secure `https` protocol.  This problem is solved by prefixing the `start` script in `package.json` with `HTTPS=true`.
+
+**Give Device Permission to Read Motion Events:**<br>
+In 2019, Apple [limited access to motion events in iOS safari by default](https://www.macrumors.com/2019/02/04/ios-12-2-safari-motion-orientation-access-toggle/).  This means that attempting to access the `deviceorientation` event requires deliberate approval by the user.  The function `DeviceOrientationEvent.requestPermission()` is available, but must be called explicitly by a `click` event (or similar), as opposed to being called programatically.  There is now a button on the `<Overlay />` component which allows the user to explicitly grant permission to the browser to use native mobile device motion events.
+
+**Creating a Development / Desktop Experience:**<br>
+Considering tilt-saturate relies in mobile device motion events for its central feature, the app is difficult to test / play with in development, or when using on a desktop/laptop browser.  While a dev can [simulate motion events in Chrome devtools](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation), this is a painful and clunky experience.  I implemented the `<Simulator />` component, which makes the same saturate-on-tilt experience available through a [circular slider](https://github.com/petecorreia/react-circular-input).
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
+All scrips are inherited from a standard create-react-app application.  In the project directory, you can run:
+#### `npm start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
