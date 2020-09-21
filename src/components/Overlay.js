@@ -6,7 +6,7 @@ import { MdPhoneIphone } from 'react-icons/md';
 
 import './Overlay.scss';
 
-const Overlay = ({ setCamOpen, orientation }) => {
+const Overlay = ({ setCamOpen, orientation, attachListener }) => {
 	const [open, setOpen] = useState(true);
 
 	return (
@@ -25,6 +25,13 @@ const Overlay = ({ setCamOpen, orientation }) => {
 					<button className="alternate" onClick={() => setOpen(false)}>
 						Got it!
 					</button>
+					<div className="warning">
+						Not working? You may need to{' '}
+						<button className="understated" onClick={attachListener}>
+							give your iphone permission
+						</button>{' '}
+						to use its gyroscope.
+					</div>
 				</div>
 			)}
 			{!open && (
