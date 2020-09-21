@@ -40,6 +40,12 @@ In 2019, Apple [limited access to motion events in iOS safari by default](https:
 **Creating a Development / Desktop Experience:**<br>
 Considering tilt-saturate relies in mobile device motion events for its central feature, the app is difficult to test / play with in development, or when using on a desktop/laptop browser.  While a dev can [simulate motion events in Chrome devtools](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation), this is a painful and clunky experience.  I implemented the `<Simulator />` component, which makes the same saturate-on-tilt experience available through a [circular slider](https://github.com/petecorreia/react-circular-input).
 
+## Room for Improvement
+
+The tilt simulator is a nice feature when not on mobile.  However, when on a mobile device, it is rendered functionally useless, as the `deviceorientation` event fires so frequently that it overrides any user input from the `<CircularInput />`.  Ideally, the app should conditionally render the button to open the `<Simulator />` based on whether or not the device being used is a mobile one.
+
+Also, much more testing is needed across different devices and browsers to make sure the behavior is consistent across various environments.
+
 ## Available Scripts
 
 All scrips are inherited from a standard create-react-app application.  In the project directory, you can run:
