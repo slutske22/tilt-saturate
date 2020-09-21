@@ -6,7 +6,7 @@ import { MdPhoneIphone } from 'react-icons/md';
 
 import './Overlay.scss';
 
-const Overlay = ({ setCamOpen }) => {
+const Overlay = ({ setCamOpen, orientation }) => {
 	const [open, setOpen] = useState(true);
 
 	return (
@@ -41,6 +41,7 @@ const Overlay = ({ setCamOpen }) => {
 						</div>
 					</div>
 					<div className="bottom">
+						<pre>{JSON.stringify(orientation, null, 2)}</pre>
 						<div className="icon-wrapper">
 							<MdPhoneIphone size={40} />
 						</div>

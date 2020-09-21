@@ -1,15 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import Overlay from './Overlay';
 
 import './CamScreen.scss';
 
 const CamScreen = ({ setCamOpen }) => {
+	const [orientation, setOrientation] = useState('orientation');
+
 	useEffect(() => {
 		const deviceOrientationHandler = (e) => {
 			const { alpha, beta, gamma } = e;
 			console.log({ alpha, beta, gamma });
+			setOrientation({ alpha, beta, gamma });
 		};
+
+		// https://medium.com/flawless-app-stories/how-to-request-device-motion-and-orientation-permission-in-ios-13-74fc9d6cd140
+		if (typeof DeviceMotionEvent.requestPermission === 'function') {
+			DeviceOrientationEvent.requestPermission()
+				.then((response) => {
+					if (response == 'granted') {
+						window.addEventListener(
+							'deviceorientation',
+							deviceOrientationHandler
+						);
+					}
+				})
+				.catch(console.error);
+		}
 
 		if (window.DeviceOrientationEvent) {
 			window.addEventListener('deviceorientation', deviceOrientationHandler);
@@ -28,7 +45,7 @@ const CamScreen = ({ setCamOpen }) => {
 	return (
 		<div className="CamScreen">
 			<Webcam videoConstraints={{ facingMode: 'user' }} className="Webcam" />
-			<Overlay setCamOpen={setCamOpen} />
+			<Overlay setCamOpen={setCamOpen} orientation={orientation} />
 		</div>
 	);
 };
