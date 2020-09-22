@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tilt-saturate/static/css/main.66011170.chunk.css",
+    "main.js": "/tilt-saturate/static/js/main.40732826.chunk.js",
+    "main.js.map": "/tilt-saturate/static/js/main.40732826.chunk.js.map",
+    "runtime-main.js": "/tilt-saturate/static/js/runtime-main.99d8ddc2.js",
+    "runtime-main.js.map": "/tilt-saturate/static/js/runtime-main.99d8ddc2.js.map",
+    "static/js/2.97d67a45.chunk.js": "/tilt-saturate/static/js/2.97d67a45.chunk.js",
+    "static/js/2.97d67a45.chunk.js.map": "/tilt-saturate/static/js/2.97d67a45.chunk.js.map",
+    "index.html": "/tilt-saturate/index.html",
+    "precache-manifest.66c35271007e7ad14e98a83661728a32.js": "/tilt-saturate/precache-manifest.66c35271007e7ad14e98a83661728a32.js",
+    "service-worker.js": "/tilt-saturate/service-worker.js",
+    "static/css/main.66011170.chunk.css.map": "/tilt-saturate/static/css/main.66011170.chunk.css.map",
+    "static/js/2.97d67a45.chunk.js.LICENSE.txt": "/tilt-saturate/static/js/2.97d67a45.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.99d8ddc2.js",
+    "static/js/2.97d67a45.chunk.js",
+    "static/css/main.66011170.chunk.css",
+    "static/js/main.40732826.chunk.js"
+  ]
+}
