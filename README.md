@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-   <h2 align="center"><a href="https://slutske22.github.io/tilt-saturate/n">&#128064; Demo &#128064;</a></h2>
+   <h2 align="center"><a href="https://slutske22.github.io/tilt-saturate">&#128064; Demo &#128064;</a></h2>
 </p>
 
 ## About
