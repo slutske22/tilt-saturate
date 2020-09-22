@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tilt-saturate/precache-manifest.66c35271007e7ad14e98a83661728a32.js"
+  "/tilt-saturate/precache-manifest.85b9679fea41a96ac2b9159bb291813e.js"
 );
 
 self.addEventListener('message', (event) => {
