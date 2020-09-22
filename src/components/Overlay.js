@@ -54,20 +54,20 @@ const Overlay = ({
 				<div className="menu">
 					<div className="top">
 						<div
+							onClick={() => setOverlay('instructions')}
+							className="icon-wrapper"
+						>
+							<FiInfo size={40} />
+                     <pre>{JSON.stringify(orientation, null, 2)}</pre>
+						</div>
+					</div>
+					<div className="bottom">
+                  <div
 							onClick={() => setCamOpen(false)}
 							className="icon-wrapper"
 						>
 							<FiArrowLeftCircle size={40} />
 						</div>
-						<div
-							onClick={() => setOverlay('instructions')}
-							className="icon-wrapper"
-						>
-							<FiInfo size={40} />
-						</div>
-					</div>
-					<div className="bottom">
-						<pre>{JSON.stringify(orientation, null, 2)}</pre>
 						<div
 							onClick={() => setOverlay('simulator')}
 							className="icon-wrapper phone-simulator"
