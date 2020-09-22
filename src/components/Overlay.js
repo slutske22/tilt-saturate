@@ -27,7 +27,7 @@ const Overlay = ({
 						<GiClockwiseRotation size={44} />
 					</div>
 					<p>Tilt your device clockwise to saturate the image.</p>
-					<p>Tilt is counterclockwise to desaturate it.</p>
+					<p>Tilt it counterclockwise to desaturate it.</p>
 					<button
 						className="alternate got-it"
 						onClick={() => setOverlay(false)}
