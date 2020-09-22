@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-   <h2 align="center"><a href="https://codesandbox.io/s/react-esri-leaflet-example-n15yn">&#128064; Demo &#128064;</a></h2>
+   <h2 align="center"><a href="https://slutske22.github.io/tilt-saturate/n">&#128064; Demo &#128064;</a></h2>
 </p>
 
 ## About
@@ -27,7 +27,7 @@ This app has been tested in the following environments:
 
 ## Central Concept
 
-tilt-saturate uses [react-webcam](https://github.com/mozmorris/react-webcam), a simple solution to creating a `<video>` component which displays the webcam feed of the user's device. When the webcam component mounts, it checks to see if the `window` has a `DeviceOrientationEvent` property.  If so, it attaches an event listener to the `deviceorientation` event and stores the `gamma` position variable from the event.  Based on the value of `gamma`, which is the tilt orientation of the device in the same plane as the screen, a [css filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) is updated on the `<Webcam />` component via the `style` prop.
+tilt-saturate uses [react-webcam](https://github.com/mozmorris/react-webcam), a simple solution to creating a `<video>` component which displays the webcam feed of the user's device. When the webcam component mounts, it checks to see if the `window` has a `DeviceOrientationEvent` property.  If so, it attaches a listener to the `deviceorientation` event and stores the `gamma` position variable from the event.  Based on the value of `gamma`, which is the tilt orientation of the device in the same plane as the screen, a [css filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) is updated on the `<Webcam />` component via the `style` prop.
 
 ## Challenges
 
@@ -39,12 +39,6 @@ In 2019, Apple [limited access to motion events in iOS safari by default](https:
 
 **Creating a Development / Desktop Experience:**<br>
 Considering tilt-saturate relies in mobile device motion events for its central feature, the app is difficult to test / play with in development, or when using on a desktop/laptop browser.  While a dev can [simulate motion events in Chrome devtools](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation), this is a painful and clunky experience.  I implemented the `<Simulator />` component, which makes the same saturate-on-tilt experience available through a [circular slider](https://github.com/petecorreia/react-circular-input).
-
-## Room for Improvement
-
-The tilt simulator is a nice feature when not on mobile.  However, when on a mobile device, it is rendered functionally useless, as the `deviceorientation` event fires so frequently that it overrides any user input from the `<CircularInput />`.  Ideally, the app should conditionally render the button to open the `<Simulator />` based on whether or not the device being used is a mobile one.
-
-Also, much more testing is needed across different devices and browsers to make sure the behavior is consistent across various environments.
 
 ## Available Scripts
 
@@ -72,7 +66,9 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+#### `npm run deploy`
 
+Deploys a new build to the `github-pages` branch of the repo.
 
 
 
