@@ -12,6 +12,10 @@
    .top {
       width: 100%;
       padding: 15px;
+
+      .icon-wrapper {
+         cursor: pointer;
+      }
    }
 
    .main-content {
@@ -44,10 +48,9 @@
          display: flex;
          align-items: center;
          justify-content: center
-
       }
 
    }
 
-   
+
 }

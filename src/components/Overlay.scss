@@ -52,13 +52,15 @@
 
       pre {
          padding-left: 20px;
-         color: white;
+         visibility: hidden;
       }
 
       .icon-wrapper {
          padding: 15px;
          color: $foreground;
+         cursor: pointer;
       }
+
    }
 
    .warning {
