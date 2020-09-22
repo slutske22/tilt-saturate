@@ -45,6 +45,8 @@ Considering tilt-saturate relies in mobile device motion events for its central 
 **OS & Browser Compatibility:**<br>
 OS and Browser compatibility is bound to be an issue.  I had a friend try this app on their iPhone 7, and they said the app is not responding to the native tilt motions (though the simulator does work).  Unfortunately, the latest version of Xcode only goes back to iPhone 8, so I was not able to test earlier iPhones.  And Xcode is not able to communicate with the developer environment's camera, so it is not possible to truly test the app with Xcode.  As far as other mobile devices go, more testing is needed.  Additionally, some browsers don't support CSS filters at all, so a [polyfill](https://github.com/Schepp/CSS-Filters-Polyfill) is needed to expand compatbility.
 
+<hr>
+
 ## Available Scripts
 
 All scrips are inherited from a standard create-react-app application.  In the project directory, you can run:
@@ -75,7 +77,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Deploys a new build to the `github-pages` branch of the repo.
 
-
+<hr>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
