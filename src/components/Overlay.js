@@ -21,23 +21,25 @@ const Overlay = ({
 			{overlay === 'instructions' && (
 				<div className="instructions">
 					<h1>Tilt Saturate</h1>
-					<h2>A silly app for people</h2>
 					<div className="icons">
 						<GiAnticlockwiseRotation size={44} />
 						<FaCameraRetro size={56} />
 						<GiClockwiseRotation size={44} />
 					</div>
 					<p>Tilt your device clockwise to saturate the image.</p>
-					<p>Tilt is counterclockwise to make it greyscale.</p>
-					<button className="alternate" onClick={() => setOverlay(false)}>
+					<p>Tilt is counterclockwise to desaturate it.</p>
+					<button
+						className="alternate got-it"
+						onClick={() => setOverlay(false)}
+					>
 						Got it!
 					</button>
 					<div className="warning">
 						Not working? You may need to{' '}
 						<button className="understated" onClick={attachListener}>
-							give your iphone permission
+							give your browser permission
 						</button>{' '}
-						to use its gyroscope.
+						to use the gyroscope.
 					</div>
 				</div>
 			)}
