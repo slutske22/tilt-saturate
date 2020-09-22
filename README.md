@@ -16,6 +16,10 @@
 
 tile-saturate is a simple web-app that opens a webcam in the browser and applies a filter based on the orientation of the mobile device being used.  Tilt the device clockwise, and the video feed will become more [saturated](https://photographylife.com/what-is-saturation-and-how-to-get-optimal-saturation).  Tilt it counter-clockwise, and it will become less saturated.
 
+## Central Concept
+
+tilt-saturate uses [react-webcam](https://github.com/mozmorris/react-webcam), a simple solution to creating a `<video>` component which displays the webcam feed of the user's device. When the webcam component mounts, it checks to see if the `window` has a `DeviceOrientationEvent` property.  If so, it attaches a listener to the `deviceorientation` event and stores the `gamma` position variable from the event.  Based on the value of `gamma`, which is the tilt orientation of the device in the same plane as the screen, a [css filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) is updated on the `<Webcam />` component via the `style` prop.
+
 ## Environments
 
 This app has been tested in the following environments:
@@ -23,11 +27,6 @@ This app has been tested in the following environments:
 - Mac OS Catalina 10.15.6, Chrome Version 84.0.4147.125
 - XCode iPhone 11 simulator, iOS 13.7, Safari Browser
 - iPhone 11 Pro, iOS 13.7, Safari Browser
-
-
-## Central Concept
-
-tilt-saturate uses [react-webcam](https://github.com/mozmorris/react-webcam), a simple solution to creating a `<video>` component which displays the webcam feed of the user's device. When the webcam component mounts, it checks to see if the `window` has a `DeviceOrientationEvent` property.  If so, it attaches a listener to the `deviceorientation` event and stores the `gamma` position variable from the event.  Based on the value of `gamma`, which is the tilt orientation of the device in the same plane as the screen, a [css filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) is updated on the `<Webcam />` component via the `style` prop.
 
 ## Challenges
 
