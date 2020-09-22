@@ -40,6 +40,11 @@ In 2019, Apple [limited access to motion events in iOS safari by default](https:
 **Creating a Development / Desktop Experience:**<br>
 Considering tilt-saturate relies in mobile device motion events for its central feature, the app is difficult to test / play with in development, or when using on a desktop/laptop browser.  While a dev can [simulate motion events in Chrome devtools](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation), this is a painful and clunky experience.  I implemented the `<Simulator />` component, which makes the same saturate-on-tilt experience available through a [circular slider](https://github.com/petecorreia/react-circular-input).
 
+## Room for Improvement
+
+**OS & Browser Compatibility:**<br>
+OS and Browser compatibility is bound to be an issue.  I had a friend try this app on their iPhone 7, and they said the app is not responding to the native tilt motions (though the simulator does work).  Unfortunately, the latest version of Xcode only goes back to iPhone 8, so I was not able to test earlier iPhones.  And Xcode is not able to communicate with the developer environment's camera, so it is not possible to truly test the app with Xcode.  As far as other mobile devices go, more testing is needed.  Additionally, some browsers don't support CSS filters at all, so a [polyfill](https://github.com/Schepp/CSS-Filters-Polyfill) is needed to expand compatbility.
+
 ## Available Scripts
 
 All scrips are inherited from a standard create-react-app application.  In the project directory, you can run:
