@@ -14,6 +14,11 @@
    p {
       font-size: 1.2em;
       text-align: center;
+      margin-bottom: 0em;
+   }
+
+   button.got-it {
+      margin: 2em;
    }
 
    .instructions {
@@ -52,17 +57,18 @@
 
       pre {
          padding-left: 20px;
-         color: white;
+         visibility: hidden;
       }
 
       .icon-wrapper {
          padding: 15px;
          color: $foreground;
+         cursor: pointer;
       }
+
    }
 
    .warning {
-      margin-top: 20px;
       text-align: center;
    }
 

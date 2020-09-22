@@ -9,12 +9,16 @@
 </p>
 
 <p align="center">
-   <h2 align="center"><a href="https://codesandbox.io/s/react-esri-leaflet-example-n15yn">&#128064; Demo &#128064;</a></h2>
+   <h2 align="center"><a href="https://slutske22.github.io/tilt-saturate">&#128064; Demo &#128064;</a></h2>
 </p>
 
 ## About
 
 tile-saturate is a simple web-app that opens a webcam in the browser and applies a filter based on the orientation of the mobile device being used.  Tilt the device clockwise, and the video feed will become more [saturated](https://photographylife.com/what-is-saturation-and-how-to-get-optimal-saturation).  Tilt it counter-clockwise, and it will become less saturated.
+
+## Central Concept
+
+tilt-saturate uses [react-webcam](https://github.com/mozmorris/react-webcam), a simple solution to creating a `<video>` component which displays the webcam feed of the user's device. When the webcam component mounts, it checks to see if the `window` has a `DeviceOrientationEvent` property.  If so, it attaches a listener to the `deviceorientation` event and stores the `gamma` position variable from the event.  Based on the value of `gamma`, which is the tilt orientation of the device in the same plane as the screen, a [css filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) is updated on the `<Webcam />` component via the `style` prop.
 
 ## Environments
 
@@ -23,11 +27,6 @@ This app has been tested in the following environments:
 - Mac OS Catalina 10.15.6, Chrome Version 84.0.4147.125
 - XCode iPhone 11 simulator, iOS 13.7, Safari Browser
 - iPhone 11 Pro, iOS 13.7, Safari Browser
-
-
-## Central Concept
-
-tilt-saturate uses [react-webcam](https://github.com/mozmorris/react-webcam), a simple solution to creating a `<video>` component which displays the webcam feed of the user's device. When the webcam component mounts, it checks to see if the `window` has a `DeviceOrientationEvent` property.  If so, it attaches an event listener to the `deviceorientation` event and stores the `gamma` position variable from the event.  Based on the value of `gamma`, which is the tilt orientation of the device in the same plane as the screen, a [css filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) is updated on the `<Webcam />` component via the `style` prop.
 
 ## Challenges
 
@@ -42,9 +41,10 @@ Considering tilt-saturate relies in mobile device motion events for its central 
 
 ## Room for Improvement
 
-The tilt simulator is a nice feature when not on mobile.  However, when on a mobile device, it is rendered functionally useless, as the `deviceorientation` event fires so frequently that it overrides any user input from the `<CircularInput />`.  Ideally, the app should conditionally render the button to open the `<Simulator />` based on whether or not the device being used is a mobile one.
+**OS & Browser Compatibility:**<br>
+OS and Browser compatibility is bound to be an issue.  I had a friend try this app on their iPhone 7, and they said the app is not responding to the native tilt motions (though the simulator does work).  Unfortunately, the latest version of Xcode only goes back to iPhone 8, so I was not able to test earlier iPhones.  And Xcode is not able to communicate with the developer environment's camera, so it is not possible to truly test the app with Xcode.  As far as other mobile devices go, more testing is needed.  Additionally, some browsers don't support CSS filters at all, so a [polyfill](https://github.com/Schepp/CSS-Filters-Polyfill) is needed to expand compatbility.
 
-Also, much more testing is needed across different devices and browsers to make sure the behavior is consistent across various environments.
+<hr>
 
 ## Available Scripts
 
@@ -76,9 +76,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+#### `npm run deploy`
 
+Deploys a new build to the `github-pages` branch of the repo.
 
-
+<hr>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

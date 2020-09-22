@@ -5,9 +5,10 @@ import Overlay from './Overlay';
 import './CamScreen.scss';
 
 const CamScreen = ({ setCamOpen }) => {
+	const [overlay, setOverlay] = useState('instructions');
 	const [orientation, setOrientation] = useState('orientation');
-	const [simulatorValue, setSimulatorValue] = useState(0)
-	const [filter, setFilter] = useState('saturate(100%)')
+	const [simulatorValue, setSimulatorValue] = useState(0);
+	const [filter, setFilter] = useState('saturate(100%)');
 
 	const deviceOrientationHandler = (e) => {
 		const { alpha, beta, gamma } = e;
@@ -45,28 +46,30 @@ const CamScreen = ({ setCamOpen }) => {
 	}, []);
 
 	useEffect(() => {
-		const degrees = simulatorValue * 360
-		const gamma = degrees > 180
-			? -360 + degrees
-			: degrees
-		setOrientation({ gamma })
-	}, [simulatorValue])
-
-	useEffect(() => {
-		const { gamma } = orientation
-		const filter = gamma < 0
-			? `saturate(${100 + gamma}%)`
-			: `saturate(${100 + gamma * 2}%)`
-		setFilter(filter)
-	}, [orientation])
+		const degrees = simulatorValue * 360;
+		const simulatorGamma = degrees > 180 ? -360 + degrees : degrees;
+		const gamma =
+			overlay === 'simulator' ? simulatorGamma : orientation.gamma;
+		const filter =
+			gamma < 0
+				? `saturate(${100 + gamma}%)`
+				: `saturate(${100 + gamma * 2}%)`;
+		setFilter(filter);
+	}, [orientation, simulatorValue, overlay]);
 
 	return (
 		<div className="CamScreen">
-			<Webcam videoConstraints={{ facingMode: 'user' }} className="Webcam" style={{ filter }}/>
+			<Webcam
+				videoConstraints={{ facingMode: 'user' }}
+				className="Webcam"
+				style={{ filter }}
+			/>
 			<Overlay
 				setCamOpen={setCamOpen}
 				orientation={orientation}
 				attachListener={attachListener}
+				overlay={overlay}
+				setOverlay={setOverlay}
 				simulatorValue={simulatorValue}
 				setSimulatorValue={setSimulatorValue}
 			/>
