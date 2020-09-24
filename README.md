@@ -44,7 +44,7 @@ Considering tilt-saturate relies in mobile device motion events for its central 
 **OS & Browser Compatibility:**<br>
 OS and Browser compatibility is bound to be an issue. I had a friend try this app on their iPhone 7, and they said the app is not responding to the native tilt motions (though the simulator does work). Unfortunately, the latest version of Xcode only goes back to iPhone 8, so I was not able to test earlier iPhones. And Xcode is not able to communicate with the developer environment's camera, so it is not possible to truly test the app with Xcode. As far as other mobile devices go, more testing is needed. Additionally, some browsers don't support CSS filters at all, so a [polyfill](https://github.com/Schepp/CSS-Filters-Polyfill) is needed to expand compatbility.
 
-## Thought Experiment: Sending Device Orientation Data to Another Device (WIP)
+## Thought Experiment: Sending Device Orientation Data to Another Device
 
 It would be possible to extend the orientation-based filter to a second device using a node server and websockets. For example, two or more people could communicate in a FaceTime-like app, with each person's video feed appearing on other users' screens with the saturate filter applied based on their device's tilt. Many others have written tutorials on making a video chat app in Javascript, and these are great jumping off points for this thought experiment.
 
