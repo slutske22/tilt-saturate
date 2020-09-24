@@ -1,6 +1,6 @@
 <p align="center">
    <img src="/assets/tilt-left.png" width="80px">&nbsp;&nbsp;&nbsp;&nbsp;
-   <img src="/assets/tilt.png" width="80px">&nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="/assets/tilt-icon.png" width="80px">&nbsp;&nbsp;&nbsp;&nbsp;
    <img src="/assets/tilt-right.png" width="80px">
    <h1 align="center">tilt-saturate</h1>
 </p>
