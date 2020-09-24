@@ -94,7 +94,7 @@ And of course an `orientation2` event can be added to allow for the effect to ha
 
 The disadvantage of this method is that it requires an intermediary machine to host the node server and relay communication between the two devices. But on each user's device, all that's needed is a browser running client-side code to work. To eliminate the need for a go-between machines, each mobile device can run an entire full stack application, which has a node server communicating with the browser, and sending and receiving messages from other applications. This is not possible as a simple webpage, but can be accomplished by building a full-fledged mobile app. It would look something like this:
 
-<img src="/assets/tilt-fullstack-diagram.png">
+<img src="/assets/tilt-fullstack-diag.png">
 
 I hope you enjoyed these musings.
 
