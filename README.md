@@ -48,9 +48,7 @@ OS and Browser compatibility is bound to be an issue. I had a friend try this ap
 
 It would be possible to extend the orientation-based filter to a second device using a node server and websockets. For example, two or more people could communicate in a FaceTime-like app, with each person's video feed appearing on other users' screens with the saturate filter applied based on their device's tilt. Many others have written tutorials on making a video chat app in Javascript, and these are great jumping off points for this thought experiment.
 
-<p align="center">
-   <img src="/assets/invent-the-universe.png">
-</p>
+<img src="/assets/invent-the-universe.png">
 
 The tutorial [WebRTC and Node.js: Development of a real-time video chat app](https://tsh.io/blog/how-to-write-video-chat-app-using-webrtc-and-nodejs/) introduces how to use websockets to create a video chat app. The article [Making an interactive hoverboard game using JavaScript and web sockets](https://medium.com/@devdevcharlie/hvbrd-c6266ee31461) discusses how to stream device orientation data from one device to another. A node server can act as an intermediary, listening for users to connect, and allow users to listen for events to be emitted from the server:
 
@@ -91,6 +89,12 @@ socket.on('orientation1', function(e){
 ```
 
 And of course an `orientation2` event can be added to allow for the effect to happen in both directions. A simple sketch shows the communication between the two:
+
+<img src="/assets/tilt-diagram.png">
+
+The disadvantage of this method is that it requires an intermediary machine to host the node server and relay communication between the two devices. But on each user's device, all that's needed is a browser running client-side code to work. To eliminate the need for a go-between machine, each mobile device can run an entire full stack application, which has a node server communicating with the browser, and sending and receiving messages from other applications. This is not possible as a simple webpage, but can be accomplished by building a full-fledged mobile app. It would look something like this:
+
+<img src="/assets/tilt-fullstack-diagram.png">
 
 <hr>
 
